@@ -17,6 +17,7 @@ datos_orig <- read_excel("cantComportamientos.xlsx")
 datos <- datos_orig %>% mutate(Parasitism = as.factor(Parasitism), 
                                DormancyTime = as.factor(DormancyTime))
 
+
 str(datos)
 
 # --------------------------------------------------
@@ -70,7 +71,7 @@ summary(mod_pois)
 
 
 
-# evalúo la significación global del modelo 
+# evalÃºo la significaciÃ³n global del modelo 
 mod_pois_nulo <- glm(Behaviors ~  1 , family = poisson, data = datos)
 sal_anova <- anova(mod_pois, mod_pois_nulo, test = "Chisq")
 sal_anova
